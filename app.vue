@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-
 // SEO 优化
 useSeoMeta({
 	title: '哔哩哔哩 (゜-゜)つロ 干杯~-bilibili',
@@ -16,8 +15,17 @@ let a = 0
 	<NuxtLink to="/">首页</NuxtLink>
 	<NuxtLink to="/video">视频页</NuxtLink>
 	<!-- 路由出口，<RouterView> -->
-	<NuxtPage/>
+	<NuxtPage />
+	
+	
 
+	
+	
+	
+	<div></div>
+	
+
+	
 </template>
 
 <style lang="scss">

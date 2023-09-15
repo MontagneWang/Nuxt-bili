@@ -4,6 +4,7 @@ const { data:channelList } = await useFetch('/api/channel')
 const { data:videoList } = await useFetch('/api/video')
 console.log(channelList);
 console.log(videoList);
+
 </script>
 
 <template>
