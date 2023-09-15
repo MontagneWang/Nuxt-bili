@@ -1,0 +1,20 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev --open",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "nuxt": "^3.7.3",
+    "postcss-px-to-viewport": "^1.1.1",
+    "sass": "^1.67.0"
+  },
+  "dependencies": {
+    "@vant/nuxt": "^1.0.3"
+  }
+}
