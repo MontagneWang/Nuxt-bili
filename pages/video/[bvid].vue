@@ -21,21 +21,25 @@ let videoLink = `//player.bilibili.com/player.html?aid=
     &page=1&high_quality=1&danmaku=1&autoplay=0`;
 
 // @ts-ignore
-const { data: videoList }: { videoList: VideoItem[] } = await useFetch("/api/video");
+const { data: videoList }: { videoList: VideoItem[] } = await useFetch(
+  "/api/video"
+);
 
-let randomArray: VideoItem[] = [];
-let selectedIndexes: number[] = [];
+function getRandomElements(arr: any[], count: number): any[] {
+  const randomElements: any[] = [];
+  const copyArr = Array.from(arr); // 创建原始数组的副本
 
-while (randomArray.length < 20) {
-  let randomIndex = Math.floor(Math.random() * videoList.length);
-
-  if (!selectedIndexes.includes(randomIndex)) {
-    selectedIndexes.push(randomIndex);
-    let randomElement = videoList[randomIndex];
-    randomArray.push(randomElement);
+  // 随机选取元素
+  for (let i = 0; i < count; i++) {
+    const randomIndex = Math.floor(Math.random() * copyArr.length);
+    randomElements.push(copyArr[randomIndex]);
+    copyArr.splice(randomIndex, 1);
   }
+
+  return randomElements;
 }
 
+let randomList: VideoItem[] = getRandomElements(videoList.value, 20);
 </script>
 
 <template>
@@ -64,8 +68,9 @@ while (randomArray.length < 20) {
   <div class="relate">
     <h3 class="relate-title">相关推荐</h3>
     <div class="relate-list">
-      <EachVideo v-for="item in randomArray" :key="item.aid" :item="item" />
+      <EachVideo v-for="item in randomList" :key="item.aid" :item="item" />
     </div>
+    <div class="foot-tips">- 下载 App 查看更多视频 -</div>
     <van-back-top class="custom"></van-back-top>
   </div>
 </template>
@@ -123,6 +128,13 @@ while (randomArray.length < 20) {
     display: flex;
     flex-wrap: wrap;
     padding: 0 5px;
+  }
+
+  .foot-tips{
+    text-align: center;
+    color:#ccc;
+    font-size: 14px;
+    margin-bottom:3vh;
   }
 }
 </style>
