@@ -7,6 +7,7 @@ useSeoMeta({
 	keywords: 'B站,bilibili,哔哩哔哩,动漫,番剧',
 })
 
+let a = 0
 
 </script>
 
