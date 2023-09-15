@@ -1,7 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-	modules:[
+	devtools: { enabled: true },
+	app: {
+		head: {
+			// title: 'Nuxt-bili',
+			meta: [
+				// <meta name="description" content="My amazing site">
+				{ name: 'description', content: 'bilibili' },
+				{ name: "referrer", content: "no-referrer" }
+			],
+		},
+	},
+	modules: [
 		'@vant/nuxt',
 	],
 	// @ts-ignore
