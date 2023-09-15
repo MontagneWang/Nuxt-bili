@@ -19,6 +19,10 @@ useSeoMeta({
 let videoLink = `//player.bilibili.com/player.html?aid=
     ${detail.value?.aid}&bvid=${detail.value?.bvid}&cid=${cid}
     &page=1&high_quality=1&danmaku=1&autoplay=0`;
+let videoHeight = ref(200);
+onMounted(() => {
+  videoHeight.value = (window.innerWidth * 9) / 16;
+});
 
 // @ts-ignore
 const { data: videoList }: { videoList: VideoItem[] } = await useFetch(
@@ -49,7 +53,7 @@ let randomList: VideoItem[] = getRandomElements(videoList.value, 20);
     :src="videoLink"
     allowFullScreen="allowfullscreen"
     width="100%"
-    height="200"
+    :height="videoHeight"
     scrolling="no"
     frameborder="0"
     loading="lazy"
@@ -130,11 +134,11 @@ let randomList: VideoItem[] = getRandomElements(videoList.value, 20);
     padding: 0 5px;
   }
 
-  .foot-tips{
+  .foot-tips {
     text-align: center;
-    color:#ccc;
+    color: #ccc;
     font-size: 14px;
-    margin-bottom:3vh;
+    margin-bottom: 3vh;
   }
 }
 </style>
