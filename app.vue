@@ -16,7 +16,7 @@ let a = 0
 	<NuxtLink to="/video">视频页</NuxtLink>
 	<!-- 路由出口，<RouterView> -->
 	<NuxtPage />
-	
+
 	
 
 	
