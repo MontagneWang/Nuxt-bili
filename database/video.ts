@@ -222,7 +222,7 @@ export default [
     enable_vt: 0,
   },
   {
-    aid: 592627392,
+    aid: 853634288,
     type_id: 30,
     "tname": "VOCALOID·UTAU",
     "copyright": 1,
@@ -255,7 +255,7 @@ export default [
     },
     hot_desc: '',
     corner_mark: 0,
-    bvid: 'BV14q4y1m7ek',
+    bvid: 'BV1wL4y1c7J8',
     enable_vt: 0,
   },
   {
